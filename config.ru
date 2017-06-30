@@ -1,4 +1,5 @@
-require "config/environment.rb"
+require "./config/environment.rb"
 
 use Rack::MethodOverride
-run App
+use BorrowersController
+run AppController

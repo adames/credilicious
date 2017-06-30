@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170630150449) do
+ActiveRecord::Schema.define(version: 20170630175724) do
+
+  create_table "borrower_payments", force: :cascade do |t|
+    t.float "amount"
+    t.integer "borrower_id"
+  end
+
+  create_table "borrower_purchases", force: :cascade do |t|
+    t.float "amount"
+    t.string "seller"
+    t.integer "card_id"
+  end
 
   create_table "borrowers", force: :cascade do |t|
     t.string "first_name"
@@ -22,13 +33,8 @@ ActiveRecord::Schema.define(version: 20170630150449) do
 
   create_table "cards", force: :cascade do |t|
     t.integer "borrower_id"
-    t.integer "transaction_id"
+    t.integer "credit_line"
     t.boolean "active", default: true
-  end
-
-  create_table "transactions", force: :cascade do |t|
-    t.float "amount"
-    t.string "seller"
   end
 
 end
