@@ -1,0 +1,16 @@
+
+    <h1>Edit Application</h1>
+    <form class="" action="/borrowers/<%=@borrower.id%>" method="post">
+      <label for="">First Name</label>
+      <input type="text" name="borrower[first_name]" value="<%= @borrower.first_name %>"> <br>
+      <label for="">Last Name</label>
+      <input type="text" name="borrower[last_name]" value="<%= @borrower.last_name %>"> <br>
+      <label for="">Phone Number</label>
+      <input type="text" name="borrower[phone_number]" value="<%= @borrower.phone_number %>"> <br>
+      <label for="">Email</label>
+      <input type="text" name="borrower[email]" value="<%= @borrower.email%>"> <br>
+      <label for="">Address</label>
+      <input type="text" name="borrower[address]" value="<%= @borrower.address %>"> <br>
+      <input id="hidden" type="hidden" name="_method" value="patch">
+      <input type="submit" name="" value="Complete Edits"> <br>
+    </form>

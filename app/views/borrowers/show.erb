@@ -1,7 +1,21 @@
+<label for="">First Name</label>
 <%= @borrower.first_name %>
+<label for="">Last Name</label>
 <%= @borrower.last_name %>
+<label for="">Phone Number</label>
 <%= @borrower.phone_number %>
+<label for="">Email</label>
 <%= @borrower.email%>
+<label for="">Address</label>
 <%= @borrower.address %>
+<label for="">Amount Unpaid</label>
 <%= @borrower.amount_unpaid %>
+<label for="">Credit Line</label>
 <%= @borrower.card.credit_line %>
+
+<form class="" action="index.html" method="delete">
+<input id="hidden" type="hidden" name="_method" value="delete">
+<input type="submit" name="" value="Delete Account">
+</form>
+
+<a href="/borrowers/<%=@borrower.id%>/edit">Update Profile</a>

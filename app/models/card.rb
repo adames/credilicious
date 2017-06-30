@@ -8,4 +8,8 @@ class Card < ActiveRecord::Base
     end
   end
 
+  def self.default_card
+    Card.create(credit_line:1000)
+  end
+
 end
