@@ -11,7 +11,11 @@ class BorrowersController < AppController
   post '/borrowers' do
     @borrower = Borrower.create(params[:borrower])
     @borrower.card = Card.default_card
-    redirect "/borrowers/#{@borrower.id}"
+    if @borrower.errors.any?
+      erb :'borrowers/new'
+    else
+      redirect "/borrowers/#{@borrower.id}"
+    end
   end
 
   get '/borrowers/:id' do
