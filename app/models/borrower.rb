@@ -2,6 +2,8 @@ class Borrower < ActiveRecord::Base
   has_one :card
   has_many :borrower_purchases, :through => :card
   has_many :borrower_payments
+  has_many :employers, through: => :empoloyment_history
+  has_many :employment_histories
 
   validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: "only allows letters"}
   validates :first_name, length: { in: 2..15, message: "wrong name length"}

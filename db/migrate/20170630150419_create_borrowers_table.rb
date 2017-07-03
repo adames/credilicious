@@ -6,6 +6,7 @@ class CreateBorrowersTable < ActiveRecord::Migration[5.1]
       t.bigint :phone_number
       t.string :email
       t.string :address
+      t.bigint :social_security
       t.timestamp
     end
   end
