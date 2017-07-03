@@ -1,21 +1,48 @@
-<label for="">First Name</label>
-<%= @borrower.first_name %>
-<label for="">Last Name</label>
-<%= @borrower.last_name %>
-<label for="">Phone Number</label>
-<%= @borrower.phone_number %>
-<label for="">Email</label>
-<%= @borrower.email%>
-<label for="">Address</label>
-<%= @borrower.address %>
-<label for="">Amount Unpaid</label>
-<%= @borrower.amount_unpaid %>
-<label for="">Credit Line</label>
-<%= @borrower.card.credit_line %>
+<link href="../default.css" rel="stylesheet" type="text/css" media="all" />
+<!-- <link href="../fonts.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href="../form.css" rel="stylesheet" type="text/css" media="all" />
 
+<div id="wrapper">
+
+
+<div id="extra" class="container">
+
+
+
+<div class="title">
+  <h2>User Profile</h2>
+
+
+<span class="byline">
+<label for="">First Name</label>
+<%= @borrower.first_name %><br>
+<label for="">Last Name</label>
+<%= @borrower.last_name %><br>
+<label for="">Phone Number</label>
+<%= @borrower.phone_number %><br>
+<label for="">Email</label>
+<%= @borrower.email%><br>
+<label for="">Address</label>
+<%= @borrower.address %><br>
+<label for="">Amount Unpaid</label>
+<%= @borrower.amount_unpaid %><br>
+<label for="">Credit Line</label>
+<%= @borrower.card.credit_line %><br>
+</span>
+</div>
+
+<div class="button">
+
+</div>
 <form class="" action="index.html" method="delete">
 <input id="hidden" type="hidden" name="_method" value="delete">
 <input type="submit" name="" value="Delete Account">
 </form>
+</div>
 
-<a href="/borrowers/<%=@borrower.id%>/edit">Update Profile</a>
+<ul class="actions">
+  <a href="/borrowers/<%=@borrower.id%>/edit" class="button">Update Profile</a>
+</ul>
+
+</div>
+</div>
