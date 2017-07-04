@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: cards
+#
+#  id          :integer          not null, primary key
+#  borrower_id :integer
+#  credit_line :integer
+#  active      :boolean          default(TRUE)
+#
+
 class Card < ActiveRecord::Base
   belongs_to :borrower
   has_many :borrower_purchases

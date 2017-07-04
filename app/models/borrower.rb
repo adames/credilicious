@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: borrowers
+#
+#  id              :integer          not null, primary key
+#  first_name      :string
+#  last_name       :string
+#  phone_number    :integer
+#  email           :string
+#  address         :string
+#  social_security :integer
+#
+
 class Borrower < ActiveRecord::Base
   has_one :card
   has_many :borrower_purchases, :through => :card
@@ -30,11 +43,3 @@ class Borrower < ActiveRecord::Base
 
 
 end
-
-# create_table "borrowers", force: :cascade do |t|
-#   t.string "first_name"
-#   t.string "last_name"
-#   t.bigint "phone_number"
-#   t.string "email"
-#   t.string "address"
-# end

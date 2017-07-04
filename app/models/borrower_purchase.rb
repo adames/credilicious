@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: borrower_purchases
+#
+#  id      :integer          not null, primary key
+#  amount  :float
+#  seller  :string
+#  card_id :integer
+#
+
 class BorrowerPurchase < ActiveRecord::Base
   belongs_to :card
 
@@ -17,10 +27,3 @@ class BorrowerPurchase < ActiveRecord::Base
   end
 
 end
-
-
-# create_table "borrower_purchases", force: :cascade do |t|
-#   t.float "amount"
-#   t.string "seller"
-#   t.integer "card_id"
-# end

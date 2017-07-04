@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: employment_histories
+#
+#  id          :integer          not null, primary key
+#  borrower_id :integer
+#  employer_id :integer
+#  salary      :float
+#  start_date  :date
+#  end_date    :date
+#  job_title   :string
+#
+
 class EmploymentHistory < ActiveRecord::Base
   belongs_to :employer
   belongs_to :borrower
