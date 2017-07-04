@@ -1,18 +1,18 @@
 class BorrowersController < AppController
 
   get '/borrowers' do
-    erb :'borrowers/index'
+    erb :'borrowers/index.html'
   end
 
   get '/borrowers/new' do
-    erb :'borrowers/new'
+    erb :'borrowers/new.html'
   end
 
   post '/borrowers' do
     @borrower = Borrower.create(params[:borrower])
     @borrower.card = Card.default_card
     if @borrower.errors.any?
-      erb :'borrowers/new'
+      erb :'borrowers/new.html'
     else
       redirect "/borrowers/#{@borrower.id}"
     end
@@ -20,12 +20,12 @@ class BorrowersController < AppController
 
   get '/borrowers/:id' do
     @borrower = Borrower.find(params[:id])
-    erb :'borrowers/show'
+    erb :'borrowers/show.html'
   end
 
   get '/borrowers/:id/edit' do
     @borrower = Borrower.find(params[:id])
-    erb :'borrowers/edit'
+    erb :'borrowers/edit.html'
   end
 
   patch '/borrowers/:id' do
