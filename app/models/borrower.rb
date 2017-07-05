@@ -28,7 +28,7 @@ class Borrower < ActiveRecord::Base
   validates :phone_number, length: { is: 10, message: "wrong phone length"}
   validates :phone_number, format: { with: /\A[0-9]+\z/, message: "only allows numbers"}
 
-  validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
+  validates :email, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "email is invalid" }
 
   def amount_unpaid
     self.card.credit_used - self.total_payments

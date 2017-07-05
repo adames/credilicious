@@ -11,6 +11,7 @@ class BorrowersController < AppController
   post '/borrowers' do
     @borrower = Borrower.create(params[:borrower])
     @borrower.card = Card.default_card
+    binding.pry
     if @borrower.errors.any?
       erb :'borrowers/new.html'
     else
@@ -19,6 +20,7 @@ class BorrowersController < AppController
   end
 
   get '/borrowers/:id' do
+    redirect '/' if !Borrower.exists?(params[:id])
     @borrower = Borrower.find(params[:id])
     erb :'borrowers/show.html'
   end
