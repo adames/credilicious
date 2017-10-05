@@ -1,45 +1,86 @@
-class BorrowersController < AppController
+class BorrowersController < ApplicationController
 
-  get '/borrowers' do
-    erb :'borrowers/index.html'
+  # TODO must split between routes and controller.
+
+  def index
+    @borrower = Borrower.all
   end
 
-  get '/borrowers/new' do
-    erb :'borrowers/new.html'
+  # get '/borrowers' do
+  #   erb :'borrowers/index.html'
+  # end
+
+  def new
+    @borrower = Borrower.new
   end
 
-  post '/borrowers' do
+  # get '/borrowers/new' do
+  #   erb :'borrowers/new.html'
+  # end
+
+  def create
+    #needs strong params integration
     @borrower = Borrower.create(params[:borrower])
     @borrower.card = Card.default_card
-    binding.pry
     if @borrower.errors.any?
       erb :'borrowers/new.html'
     else
-      redirect "/borrowers/#{@borrower.id}"
+      redirect_to "/borrowers/#{@borrower.id}"
     end
   end
 
-  get '/borrowers/:id' do
-    redirect '/' if !Borrower.exists?(params[:id])
+  # post '/borrowers' do
+  #   @borrower = Borrower.create(params[:borrower])
+  #   @borrower.card = Card.default_card
+  #   if @borrower.errors.any?
+  #     erb :'borrowers/new.html'
+  #   else
+  #     redirect_to "/borrowers/#{@borrower.id}"
+  #   end
+  # end
+
+  def show
+    redirect_to '/' if !Borrower.exists?(params[:id])
     @borrower = Borrower.find(params[:id])
-    erb :'borrowers/show.html'
   end
 
-  get '/borrowers/:id/edit' do
+  # get '/borrowers/:id' do
+  #   redirect_to '/' if !Borrower.exists?(params[:id])
+  #   @borrower = Borrower.find(params[:id])
+  #   erb :'borrowers/show.html'
+  # end
+
+  def edit
     @borrower = Borrower.find(params[:id])
     erb :'borrowers/edit.html'
   end
 
-  patch '/borrowers/:id' do
+  # get '/borrowers/:id/edit' do
+  #   @borrower = Borrower.find(params[:id])
+  #   erb :'borrowers/edit.html'
+  # end
+
+  def update
     @borrower = Borrower.find(params[:id])
     @borrower.update(params[:borrower])
-    redirect "/borrowers/#{@borrower.id}"
+    redirect_to "/borrowers/#{@borrower.id}"
   end
 
-  delete '/borrowers/:id' do
+  # patch '/borrowers/:id' do
+  #   @borrower = Borrower.find(params[:id])
+  #   @borrower.update(params[:borrower])
+  #   redirect_to "/borrowers/#{@borrower.id}"
+  # end
+
+  def delete
     Borrower.find(params[:id]).destroy
-    redirect '/'
+    redirect_to '/'
   end
+
+  # delete '/borrowers/:id' do
+  #   Borrower.find(params[:id]).destroy
+  #   redirect_to '/'
+  # end
 
 
 end

@@ -22,7 +22,7 @@ How much borrower make (approved by borrower)
 
 
 
-Borrower requests credit line from the lender (credulous). 
+Borrower requests credit line from the lender (credulous).
 	-borrower sends payroll permission to send income
 	- historical monthly income
 

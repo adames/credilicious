@@ -1,6 +1,5 @@
-require "./config/environment.rb"
+# This file is used by Rack-based servers to start the application.
 
-use Rack::MethodOverride
-use BorrowersController
-use StaticController
-run AppController
+require_relative 'config/environment'
+
+run Rails.application
