@@ -1,4 +1,27 @@
 <link href="../default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../form.css" rel="stylesheet" type="text/css" media="all" />
 
-<p> haven't built this yet, but it will take you to login, then to your show page</p>
+<div class="container-fluid">
+  <h1>All Borrowers</h1>
+  <a href="/borrowers/new">New Borrower</a>
+</div>
+<table class="table">
+  <tr>
+    <th>Borrower Page</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Address</th>
+  </tr>
+  <% @borrowers.each do |v| %>
+    <tr>
+      <td><%= link_to v.id, borrowers_path(v) %></td>
+      <td><%= v.first_name %></td>
+      <td><%= v.last_name %></td>
+      <td><%= v.phone_number %></td>
+      <td><%= v.email %></td>
+      <td><%= v.address %></td>
+    </tr>
+  <% end %>
+</table>
