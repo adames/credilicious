@@ -4,19 +4,19 @@
       <h2>User Profile</h2>
       <span class="byline">
       <label for="">First Name</label>
-      <%= @borrower.first_name %><br>
+      <%= @borrower.first_name %><br/>
       <label for="">Last Name</label>
-      <%= @borrower.last_name %><br>
+      <%= @borrower.last_name %><br/>
       <label for="">Phone Number</label>
-      <%= @borrower.phone_number %><br>
+      <%= @borrower.phone_number %><br/>
       <label for="">Email</label>
-      <%= @borrower.email%><br>
+      <%= @borrower.email%><br/>
       <label for="">Address</label>
-      <%= @borrower.address %><br>
+      <%= @borrower.address %><br/>
       <label for="">Amount Unpaid</label>
-      <%= @borrower.amount_unpaid %><br>
+      $<%= @borrower.amount_unpaid.round(2) %><br/>
       <label for="">Credit Line</label>
-      <%= @borrower.card.credit_line %><br>
+      $<%= @borrower.card.credit_line.round(2) %><br/>
       </span>
     </div>
     <form class="" action="/borrowers/<%=@borrower.id%>" method="post">
