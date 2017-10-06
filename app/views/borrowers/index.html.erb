@@ -11,18 +11,18 @@
     <th>Email</th>
     <th>Address</th>
   </tr>
-  <% @borrowers.each do |v| %>
+  <% @borrowers.each do |b| %>
     <tr>
       <td>
-        <%= link_to borrower_path(v) do %>
-          Profile #<%= v.id %>
+        <%= link_to borrower_path(b) do %>
+          Profile #<%= b.id %>
         <% end %>
       </td>
-      <td><%= v.first_name %></td>
-      <td><%= v.last_name %></td>
-      <td><%= v.phone_number %></td>
-      <td><%= v.email %></td>
-      <td><%= v.address %></td>
+      <td><%= b.first_name %></td>
+      <td><%= b.last_name %></td>
+      <td><%= b.phone_number %></td>
+      <td><%= b.email %></td>
+      <td><%= b.address %></td>
     </tr>
   <% end %>
 </table>

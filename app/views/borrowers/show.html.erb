@@ -1,8 +1,7 @@
-<div id="wrapper">
-  <div id="extra" class="container">
-    <div class="title">
+<div>
+  <div class="container">
+    <div class="user-profile">
       <h2>User Profile</h2>
-      <span class="byline">
       <label for="">First Name</label>
       <%= @borrower.first_name %><br/>
       <label for="">Last Name</label>
@@ -18,6 +17,8 @@
       <label for="">Credit Line</label>
       $<%= @borrower.card.credit_line.round(2) %><br/>
       </span>
+      <label for="">Approved for Credit Card?</label>
+      <%= @borrower.approved %><br/>
     </div>
     <form class="" action="/borrowers/<%=@borrower.id%>" method="post">
       <input id="hidden" type="hidden" name="_method" value="delete">
@@ -27,4 +28,36 @@
   <ul class="actions">
     <a href="/borrowers/<%=@borrower.id%>/edit" class="button">Update Profile</a>
   </ul>
+
+  <!-- Employment History -->
+  <!--
+  t.integer  :borrower_id
+  t.integer  :employer_id
+  t.float    :salary
+  t.date     :start_date
+  t.date     :end_date
+  t.string   :job_title
+  -->
+  <div class="employment-history">
+    <h2>Employment History</h2>
+    <table class="table">
+      <tr>
+        <th>Company Name</th>
+        <th>Salary</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Job Title</th>
+      </tr>
+      <% @employment_histories.each do |b| %>
+        <tr>
+          <td><%= b.company_name %></td>
+          <td><%= b.salary %></td>
+          <td><%= b.start_date %></td>
+          <td><%= b.end_date %></td>
+          <td><%= b.job_title %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
 </div>

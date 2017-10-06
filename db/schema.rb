@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170703213952) do
     t.bigint "phone_number"
     t.string "email"
     t.string "address"
+    t.boolean "approved", default: false
     t.bigint "social_security"
   end
 
