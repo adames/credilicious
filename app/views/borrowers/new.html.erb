@@ -1,8 +1,5 @@
-<link href="../default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="../form.css" rel="stylesheet" type="text/css" media="all" />
-
+<!-- Displays Errors if there are any -->
 <% if !@borrower.nil? && @borrower.errors.any? %>
-
   <div id="error_explanation">
     <ul>
       <% @borrower.errors.full_messages.each do |msg| %>
