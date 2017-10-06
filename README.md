@@ -3,7 +3,7 @@
 The idea all started with an observation we made: some people with great income have horrendous credit. Simply, we should provide credit to an underserved group of hardworking Americans. And because we deduct payments from your paycheck, you never have to worry about making ends meet: we give you the flexibility to meet your lifestyle.
 
 **User Stories**
-Borrower requests credit line from the lender (credulous).
+Borrower requests credit line from the lender (credi_licious).
 	- borrower sends payroll permission to send income
 	- historical monthly income
 

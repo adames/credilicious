@@ -7,7 +7,7 @@
 </div>
 <table class="table">
   <tr>
-    <th>Borrower Page</th>
+    <th>ID & Profile</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Phone Number</th>
@@ -16,7 +16,11 @@
   </tr>
   <% @borrowers.each do |v| %>
     <tr>
-      <td><%= link_to v.id, borrowers_path(v) %></td>
+      <td>
+        <%= link_to borrower_path(v) do %>
+          Profile #<%= v.id %>
+        <% end %>
+      </td>
       <td><%= v.first_name %></td>
       <td><%= v.last_name %></td>
       <td><%= v.phone_number %></td>

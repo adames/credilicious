@@ -26,7 +26,6 @@ class BorrowersController < ApplicationController
 
   def edit
     @borrower = Borrower.find(params[:id])
-    erb :'borrowers/edit.html'
   end
 
   def update
