@@ -1,33 +1,14 @@
-# credilicious
-Extending credit to the employed
-Borrower
-Line of credit
+**credi_licious** - Extending credit to the well employed
 
+The idea all started with an observation we made: some people with great income have horrendous credit. Simply, we should provide credit to an underserved group of hardworking Americans. And because we deduct payments from your paycheck, you never have to worry about making ends meet: we give you the flexibility to meet your lifestyle.
 
-
-Lender
-We offer lines of credit
-Physical card for now
-
-
- empoyer
-Name
-employed?
-Historical records
-
-
-Payroll office
-how much they owe us,
-How much borrower make (approved by borrower)
-
-
-
+**User Stories**
 Borrower requests credit line from the lender (credulous).
-	-borrower sends payroll permission to send income
+	- borrower sends payroll permission to send income
 	- historical monthly income
 
 Lender approves or disproves a line of credit
-	-an amount of credit
+	- an amount of credit
 	- based on a formula of historical income
 
 Lender sends borrower physical card
@@ -40,3 +21,6 @@ Lender sends borrower physical card
 Lender sends payroll office request for cash monthly
 	-payroll office
 	- this amount based on borrower settings
+
+**DB Architecture**
+![credi_licious DB architecture](public/images/db_architecture.jpg "credi_licious DB architecture")
