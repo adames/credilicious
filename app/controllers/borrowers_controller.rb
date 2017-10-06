@@ -9,13 +9,12 @@ class BorrowersController < ApplicationController
   end
 
   def create
-    #needs strong params integration
-    @borrower = Borrower.create(params[:borrower])
+    @borrower = Borrower.create(borrower_params)
     @borrower.card = Card.default_card
     if @borrower.errors.any?
-      erb :'borrowers/new.html'
+      render 'borrowers/new'
     else
-      redirect_to "/borrowers/#{@borrower.id}"
+      redirect_to borrower_path(@borrower)
     end
   end
 
@@ -30,13 +29,20 @@ class BorrowersController < ApplicationController
 
   def update
     @borrower = Borrower.find(params[:id])
-    @borrower.update(params[:borrower])
-    redirect_to "/borrowers/#{@borrower.id}"
+    @borrower.update(borrower_params)
+    redirect_to borrower_path(@borrower)
   end
 
   def delete
     Borrower.find(params[:id]).destroy
     redirect_to '/'
   end
+
+  private
+
+    def borrower_params
+      params.require(:borrower).permit(:first_name, :last_name, :phone_number,
+                                        :email, :address)
+    end
 
 end

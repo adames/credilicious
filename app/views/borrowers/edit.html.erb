@@ -1,5 +1,6 @@
 <div class="form-container">
   <form id="contact" action="/borrowers/<%=@borrower.id%>" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <h3>Edit Your Profile</h3>
     <fieldset>
       <input placeholder="First Name" type="text" tabindex="1" name="borrower[first_name]" value="<%= @borrower.first_name %>" required autofocus>
