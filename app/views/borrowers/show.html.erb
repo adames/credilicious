@@ -42,19 +42,19 @@
     <h2>Employment History</h2>
     <table class="table">
       <tr>
-        <th>Company Name</th>
+
         <th>Salary</th>
         <th>Start Date</th>
         <th>End Date</th>
         <th>Job Title</th>
       </tr>
-      <% @employment_histories.each do |b| %>
+      <% @employment_histories.each do |h| %>
         <tr>
-          <td><%= b.company_name %></td>
-          <td><%= b.salary %></td>
-          <td><%= b.start_date %></td>
-          <td><%= b.end_date %></td>
-          <td><%= b.job_title %></td>
+
+          <td><%= h.salary %></td>
+          <td><%= h.start_date %></td>
+          <td><%= h.end_date %></td>
+          <td><%= h.job_title %></td>
         </tr>
       <% end %>
     </table>

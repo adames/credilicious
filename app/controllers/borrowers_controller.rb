@@ -22,8 +22,7 @@ class BorrowersController < ApplicationController
     redirect_to '/' if !Borrower.exists?(params[:id])
     @borrower = Borrower.find(params[:id])
     @employment_histories = @borrower.employment_histories
-    # TODO I must join employer names with employment histories.
-    # Author.joins("INNER JOIN employer ON employment_histories.employer_id = employer.id)
+    # TODO add company names, add to show table
   end
 
   def edit
